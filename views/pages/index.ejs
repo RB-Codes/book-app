@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" href="../../../public/styles/index.css">
+    <%- include('../layout/head') %>
+<body>
+    <%- include('../layout/header') %>
+    
+             <h4> <%=  count %> </h4>
+
+        <% DBbooks.forEach((element, ind) => { %>
+   
+            <div class="child" id="<%= element.id %>"> 
+              <img src="<%= element.image_url %>" alt="">
+          
+              <h2> <%=  element.title %> </h2>
+              
+              <h3 style="font-size: 12px; color: rgb(97, 95, 95);"><%=  element.author %></h3><br>
+
+
+              <input id="detailsBtn" type="submit" value="Show Details" onclick="location.href = `/books/${<%= element.id %>}`;" ><br>
+          
+              
+          </div>
+          <% }); %>
+
+    <script src="public/js/app.js"></script>
+</body>
+</html>
